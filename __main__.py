@@ -6,6 +6,9 @@ import tornado.web, tornado.httpserver, tornado.ioloop, tornado.autoreload
 
 from mi9_dj.handlers import MainHandler, WebSocketHandler, StaticFileHandler
 
+class AutoReload(Exception):
+  pass
+
 def application():
   return tornado.web.Application(
     [
@@ -20,8 +23,18 @@ def application():
     debug=True,
   )
 
+def preprocessing():
+  print('Bundling javascript...')
+  subprocess.call(['./node_modules/browserify/bin/cmd.js', 'mi9_dj/client/main.js', '-t', 'babelify', '--outfile', 'mi9_dj/static/js/bundle.js'])
+  print('Bundling styles...')
+  subprocess.call(['./node_modules/stylus/bin/stylus', 'mi9_dj/client/main.styl', '-o', 'mi9_dj/static/styles/main.css'])
+
+def autoreload_hook():
+  print('Restarting due to file changes...')
+  preprocessing()
+
 def main():
-  subprocess.call(['browserify', 'mi9_dj/client/main.js', '-t', 'babelify', '--outfile', 'mi9_dj/static/js/bundle.js'])
+  preprocessing()
 
   http_server = tornado.httpserver.HTTPServer(application())
   http_server.listen(8080)
@@ -30,17 +43,18 @@ def main():
   for (dir_path, _, files) in os.walk('./mi9_dj/'):
     for f in files:
       tornado.autoreload.watch(os.path.join(dir_path, f))
-    break
+  tornado.autoreload.add_reload_hook(autoreload_hook)
 
+  print('Starting server...')
   tornado.ioloop.IOLoop.instance().start()
 
 if __name__ == '__main__':
-  print('Starting server...')
+  print('Starting...')
   restarts = 0
   while restarts < 5:
     try:
       main()
-    except Exception as error:
+    except Exception:
       print('Server crashed. See Exception:')
       traceback.print_exc()
       print('Server is restarting...')

@@ -3,7 +3,9 @@ import React, {Component} from 'react';
 export default class HelloWorld extends Component {
   render() {
     return (
-      <h1>Hello, World!</h1>
+      <header>
+        <a href="/"><h1>Mi9 DJ</h1></a>
+      </header>
     );
   }
 }

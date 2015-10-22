@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
 
-import HelloWorld from '../HelloWorld';
+import Header from '../Header';
+import Container from '../Container';
 
 export default class App extends Component {
   render() {
     return (
-      <HelloWorld/>
+      <div>
+        <Header/>
+        <Container/>
+      </div>
     );
   }
 }
