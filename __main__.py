@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.5
 
-import os, traceback
+import os, subprocess, traceback
 
 import tornado.web, tornado.httpserver, tornado.ioloop, tornado.autoreload
 
@@ -21,6 +21,8 @@ def application():
   )
 
 def main():
+  subprocess.call(['browserify', 'mi9_dj/client/main.js', '-t', 'babelify', '--outfile', 'mi9_dj/static/js/bundle.js'])
+
   http_server = tornado.httpserver.HTTPServer(application())
   http_server.listen(8080)
 
