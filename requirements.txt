@@ -1,2 +1,5 @@
-tornado
+tornado==4.3b1
+youtube-dl
+cached-property
+isodate
 

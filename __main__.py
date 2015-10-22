@@ -32,7 +32,6 @@ def preprocessing():
 
 def autoreload_hook():
   print('Restarting due to file changes...')
-  preprocessing()
 
 def main():
   preprocessing()
@@ -43,6 +42,8 @@ def main():
   ## Add files to watch list for autoreload
   for (dir_path, _, files) in os.walk('./mi9_dj/'):
     for f in files:
+      if f in ['bundle.js', 'main.css']:
+        continue
       tornado.autoreload.watch(os.path.join(dir_path, f))
   tornado.autoreload.add_reload_hook(autoreload_hook)
 

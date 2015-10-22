@@ -1,0 +1,34 @@
+{
+    "cmd": "add_video",
+    "value": "dQw4w9WgXcQ"
+}
+
+{
+    "cmd": "toggle_playback"
+}
+
+{
+    "cmd": "volume",
+    "value": 1.0
+}
+
+
+{
+    "cmd": "state",
+    "playing": true,
+    "volume": 1.0,
+    "playlist": [
+        {
+            "id": "dQw4w9WgXcQ",
+            "title": "Never Gonna Give You Up",
+            "image": "http://example.org/images/some.png",
+            "duration": 213
+        },
+        {
+            "id": "dQw4w9WgXcQ",
+            "title": "Never Gonna Give You Up",
+            "image": "http://example.org/images/some.png",
+            "duration": 213
+        }
+    ]
+}
