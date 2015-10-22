@@ -18,6 +18,7 @@ def application():
       (r'/images/(.*)', StaticFileHandler, {'path': './mi9_dj/static/images/'}),
       (r'/fonts/(.*)', StaticFileHandler, {'path': './mi9_dj/static/fonts/'}),
       (r'/js/(.*)', StaticFileHandler, {'path': './mi9_dj/static/js/'}),
+      (r'/(favicon\.ico)', StaticFileHandler, {'path': './mi9_dj/static/'}),
     ],
     template_path='./mi9_dj/templates/',
     debug=True,
