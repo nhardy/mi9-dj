@@ -19,7 +19,7 @@ class WebSocketHandler(tornado.websocket.WebSocketHandler):
     self._write_all(json.dumps(state))
 
   def initialize(self):
-    pass
+    self._APP.add_callback(self._send_state)
 
   def open(self):
     self._sockets.add(self)
@@ -35,10 +35,11 @@ class WebSocketHandler(tornado.websocket.WebSocketHandler):
       value = message['value']
 
     if cmd == 'add_video':
+      print('debug', message)
       _ = yield self._APP.add_video(value)
       # TODO: Send message to sender that video was added successfully
       self._send_state()
-      print(_APP.get_state())
+      print(self._APP.get_state())
 
     elif cmd == 'playback_toggle':
       pass

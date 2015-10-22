@@ -3,18 +3,15 @@ import ReactDOM from 'react-dom';
 
 import App from './components/App';
 
-import {state, addVideo} from './websocket.js';
+import appState from './state';
+import {addVideo} from './websocket';
 
-ReactDOM.render(
-  <App {...state}/>,
-  document.getElementById('root')
-);
-
-addVideo('Bag1gUxuU0g');
-setTimeout(function() {
+function renderPage(state) {
   ReactDOM.render(
     <App {...state}/>,
     document.getElementById('root')
   );
-}, 1000);
+}
+appState.callback = renderPage;
 
+appState.setState({});

@@ -1,14 +1,16 @@
-'use strict';
+import appState from './state';
 
-var ws;
-var connected = false;
-var state;
+let ws;
+let connected = false;
+let connecting = false;
 
 function init(callback) {
+  connecting = true;
   ws = new WebSocket('ws://' + window.location.hostname + ':' + window.location.port + '/ws');
 
   ws.onopen = function() {
     connected = true;
+    connecting = false;
     if (typeof callback === 'function'){
       callback();
     }
@@ -20,9 +22,9 @@ function init(callback) {
 
     switch(cmd) {
       case 'state':
-        state = content;
-        delete state.cmd;
-        console.log(state);
+        let newState = content;
+        delete newState.cmd;
+        appState.setState(newState);
         break;
     }
   }
@@ -34,10 +36,17 @@ function sendMessage(message) {
     ws.send(message);
   }
 
-  if (!ws || ws.readyState !== 1){
+  if (!ws){
     init(_sendMessage);
   } else {
-    _sendMessage();
+    if (connecting){
+      setTimeout(function() {
+        console.log('waiting', ws.readyState);
+        sendMessage(message);
+      }, 15);
+    } else {
+      _sendMessage();
+    }
   }
 }
 
