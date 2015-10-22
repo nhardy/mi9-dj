@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import SearchBody from '../SearchBody';
 
-export default class HelloWorld extends Component {
+export default class SearchPanel extends Component {
   render() {
     return (
       <div className="search-panel">

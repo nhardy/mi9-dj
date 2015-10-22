@@ -131,16 +131,16 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var HelloWorld = (function (_Component) {
-  _inherits(HelloWorld, _Component);
+var Header = (function (_Component) {
+  _inherits(Header, _Component);
 
-  function HelloWorld() {
-    _classCallCheck(this, HelloWorld);
+  function Header() {
+    _classCallCheck(this, Header);
 
-    _get(Object.getPrototypeOf(HelloWorld.prototype), "constructor", this).apply(this, arguments);
+    _get(Object.getPrototypeOf(Header.prototype), "constructor", this).apply(this, arguments);
   }
 
-  _createClass(HelloWorld, [{
+  _createClass(Header, [{
     key: "render",
     value: function render() {
       return _react2["default"].createElement(
@@ -159,10 +159,10 @@ var HelloWorld = (function (_Component) {
     }
   }]);
 
-  return HelloWorld;
+  return Header;
 })(_react.Component);
 
-exports["default"] = HelloWorld;
+exports["default"] = Header;
 module.exports = exports["default"];
 
 },{"react":164}],4:[function(require,module,exports){
@@ -186,16 +186,16 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var HelloWorld = (function (_Component) {
-  _inherits(HelloWorld, _Component);
+var PlaylistPanel = (function (_Component) {
+  _inherits(PlaylistPanel, _Component);
 
-  function HelloWorld() {
-    _classCallCheck(this, HelloWorld);
+  function PlaylistPanel() {
+    _classCallCheck(this, PlaylistPanel);
 
-    _get(Object.getPrototypeOf(HelloWorld.prototype), "constructor", this).apply(this, arguments);
+    _get(Object.getPrototypeOf(PlaylistPanel.prototype), "constructor", this).apply(this, arguments);
   }
 
-  _createClass(HelloWorld, [{
+  _createClass(PlaylistPanel, [{
     key: "render",
     value: function render() {
       return _react2["default"].createElement(
@@ -210,10 +210,10 @@ var HelloWorld = (function (_Component) {
     }
   }]);
 
-  return HelloWorld;
+  return PlaylistPanel;
 })(_react.Component);
 
-exports["default"] = HelloWorld;
+exports["default"] = PlaylistPanel;
 module.exports = exports["default"];
 
 },{"react":164}],5:[function(require,module,exports){
@@ -237,16 +237,16 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var HelloWorld = (function (_Component) {
-  _inherits(HelloWorld, _Component);
+var SearchBody = (function (_Component) {
+  _inherits(SearchBody, _Component);
 
-  function HelloWorld() {
-    _classCallCheck(this, HelloWorld);
+  function SearchBody() {
+    _classCallCheck(this, SearchBody);
 
-    _get(Object.getPrototypeOf(HelloWorld.prototype), "constructor", this).apply(this, arguments);
+    _get(Object.getPrototypeOf(SearchBody.prototype), "constructor", this).apply(this, arguments);
   }
 
-  _createClass(HelloWorld, [{
+  _createClass(SearchBody, [{
     key: "render",
     value: function render() {
       return _react2["default"].createElement(
@@ -261,10 +261,10 @@ var HelloWorld = (function (_Component) {
     }
   }]);
 
-  return HelloWorld;
+  return SearchBody;
 })(_react.Component);
 
-exports["default"] = HelloWorld;
+exports["default"] = SearchBody;
 module.exports = exports["default"];
 
 },{"react":164}],6:[function(require,module,exports){
@@ -292,16 +292,16 @@ var _SearchBody = require('../SearchBody');
 
 var _SearchBody2 = _interopRequireDefault(_SearchBody);
 
-var HelloWorld = (function (_Component) {
-  _inherits(HelloWorld, _Component);
+var SearchPanel = (function (_Component) {
+  _inherits(SearchPanel, _Component);
 
-  function HelloWorld() {
-    _classCallCheck(this, HelloWorld);
+  function SearchPanel() {
+    _classCallCheck(this, SearchPanel);
 
-    _get(Object.getPrototypeOf(HelloWorld.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(SearchPanel.prototype), 'constructor', this).apply(this, arguments);
   }
 
-  _createClass(HelloWorld, [{
+  _createClass(SearchPanel, [{
     key: 'render',
     value: function render() {
       return _react2['default'].createElement(
@@ -315,10 +315,10 @@ var HelloWorld = (function (_Component) {
     }
   }]);
 
-  return HelloWorld;
+  return SearchPanel;
 })(_react.Component);
 
-exports['default'] = HelloWorld;
+exports['default'] = SearchPanel;
 module.exports = exports['default'];
 
 },{"../SearchBody":5,"react":164}],7:[function(require,module,exports){
