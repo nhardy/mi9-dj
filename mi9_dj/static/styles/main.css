@@ -129,11 +129,42 @@ table {
   display: flex;
   margin-top: 50px;
 }
+.container div {
+  padding: 10px;
+}
 .playlist-panel {
   flex: 1;
+  margin: 5px;
+}
+.playlist-panel div {
+  margin: 5px;
+}
+.playlist-item {
+  display: flex;
+  height: 100px;
+}
+.playlist-item img {
+  flex: 2;
+  object-fit: scale-down;
+}
+.playlist-item h4 {
+  flex: 3;
 }
 .search-panel {
   flex: 2;
+  margin: 5px;
+}
+.playlist-control {
+  display: flex;
+}
+.playlist-control > div {
+  flex: 1;
+}
+.playlist-control > div:nth-child(2) {
+  text-align: center;
+}
+.playlist-control > div:nth-child(3) {
+  text-align: right;
 }
 body {
   font-family: Helvetica;
@@ -154,6 +185,8 @@ body {
   background-image: url("/images/background.jpg");
   background-size: 100%;
 }
-.container {
-  background-color: #eee;
+.playlist-panel > div,
+.search-panel {
+  background-color: rgba(238,238,238,0.7);
+  border-radius: 10px;
 }

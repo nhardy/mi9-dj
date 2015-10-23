@@ -38,15 +38,19 @@ class App:
       'playlist': playlist,
     }
 
+  def toggle_playback(self):
+    self._state['playing'] = not self._state['playing']
+    self._callbacks[0]()
+
   def _play(self, code):
     self._state['playing'] = True
     self._callbacks[0]()
     print('Playing...')
     location = '{}/{}.m4a'.format(SAVE_LOCATION, code)
-    sp = subprocess.Popen(['ffplay', '-nodisp', '-autoexit', location])
-    self._state['playing'] = False
-    self._state['playlist'].popleft()
+    # sp = subprocess.Popen(['ffplay', '-nodisp', '-autoexit', location])
+    # self._state['playing'] = False
+    # self._state['playlist'].popleft()
     self._callbacks[0]()
     print('Done.')
-    if (len(self._state['playlist']) > 0):
-      self._play(self._state['playlist'][0].code)
+    # if (len(self._state['playlist']) > 0):
+    #   self._play(self._state['playlist'][0].code)

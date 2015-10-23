@@ -74,4 +74,11 @@ export function addVideo(code) {
   sendMessage(JSON.stringify(message));
 }
 
+export function togglePlayback() {
+  var message = {
+    cmd: 'toggle_playback',
+  };
+  sendMessage(JSON.stringify(message));
+}
+
 export var state;

@@ -3,11 +3,36 @@
   margin 0 auto
 
 .container
-  display: flex
-  margin-top: 50px
+  display flex
+  margin-top 50px
+  div
+    padding 10px
 
 .playlist-panel
-  flex: 1
+  flex 1
+  margin 5px
+
+  div
+    margin 5px
+
+.playlist-item
+  display flex
+  height 100px
+  img
+    flex 2
+    object-fit scale-down
+  h4
+    flex 3
 
 .search-panel
-  flex: 2
+  flex 2
+  margin 5px
+
+.playlist-control
+  display flex
+  & > div
+    flex 1
+  & > div:nth-child(2)
+    text-align center
+  & > div:nth-child(3)
+    text-align right
