@@ -10,6 +10,7 @@ export default class SearchBody extends Component {
   render() {
     console.log(this.props.results);
     const results = this.props.results.map(function(item) {
+      console.log('item', item);
       return (
         <SearchResult {...item}/>
       );

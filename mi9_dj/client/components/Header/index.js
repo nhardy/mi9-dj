@@ -4,7 +4,7 @@ export default class Header extends Component {
   render() {
     return (
       <header>
-        <a href="/"><h1>Mi9 DJ</h1></a>
+        <a href="/"><h1>YouTune</h1></a>
       </header>
     );
   }

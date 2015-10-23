@@ -6,13 +6,13 @@
     "babel": "^5.8.23",
     "babelify": "^6.4.0",
     "browserify": "^11.2.0",
+    "isomorphic-fetch": "^2.2.0",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "stylus": "^0.52.4"
   },
   "devDependencies": {},
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/nhardy/mi9-dj.git"

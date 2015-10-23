@@ -36,12 +36,11 @@ function sendMessage(message) {
     ws.send(message);
   }
 
-  if (!ws){
+  if (!ws || ws.readyState === 2 || ws.readyState == 3){
     init(_sendMessage);
   } else {
     if (connecting){
       setTimeout(function() {
-        console.log('waiting', ws.readyState);
         sendMessage(message);
       }, 15);
     } else {
@@ -52,13 +51,6 @@ function sendMessage(message) {
 
 window.onload = function() {
   init();
-  // var message = {
-  //   cmd: 'add_video',
-  //   value: 'dQw4w9WgXcQ',
-  // };
-  // setTimeout(function() {sendMessage(JSON.stringify(message));}, 500);
-  // setTimeout(function() {sendMessage(JSON.stringify(message));}, 1500);
-  // setTimeout(function() {sendMessage(JSON.stringify(message));}, 2500);
 }
 
 window.onbeforeunload = function() {

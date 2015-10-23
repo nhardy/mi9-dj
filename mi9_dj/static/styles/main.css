@@ -184,6 +184,7 @@ h4 {
 body {
   background-image: url("/images/background.jpg");
   background-size: 100%;
+  background-attachment: fixed;
 }
 .playlist-panel > div,
 .search-panel {
